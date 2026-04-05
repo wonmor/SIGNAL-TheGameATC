@@ -79,7 +79,7 @@ struct ContentView: View {
                     if key.isEmpty {
                         game.messages.append(GameMessage(
                             speaker: .system,
-                            text: "Fictional emergency simulation. Add your OpenAI API key in Settings, then tap New. You are Toronto approach — hold the lake off your runway."
+                            text: "Training-style ATC simulation. Add your OpenAI API key in Settings, then tap New. You work Toronto approach: keep phraseology sharp and vectors sensible."
                         ))
                     } else {
                         await game.newSimulation(apiKey: key)
@@ -94,7 +94,7 @@ struct ContentView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("You are Toronto approach. Every transmission is a vote against the lake.")
+            Text("You are Toronto approach. Stable clearances beat rushed chatter.")
                 .font(.system(.caption, design: .monospaced))
                 .foregroundStyle(Color.green.opacity(0.55))
             HStack {
@@ -198,7 +198,7 @@ struct ContentView: View {
     private func tag(for s: RadioSpeaker) -> String {
         switch s {
         case .atc: "YOU — TORONTO"
-        case .frequency: "121.9 — BREAKUP"
+        case .frequency: "121.9 — RADIO"
         case .system: "SYS"
         }
     }
